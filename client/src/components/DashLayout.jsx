@@ -1,13 +1,15 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 import DashHeader from './DashHeader'
 import DashFooter from './DashFooter'
+
 const DashLayout = () => {
   return (
-    <main className="dash-container">
-      <DashHeader />
-      <Outlet />
-      <DashFooter />
-    </main>
+    <>
+      <div className="dash-container">
+        <Outlet />
+      </div>
+    </>
   )
 }
 

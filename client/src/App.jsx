@@ -1,10 +1,13 @@
-import { useState } from 'react'
-import {Routes,Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import Layout from './components/Layout'
-import Login from './features/auth/Login'
-import Public from './components/Public'
-import DashLayout from './components/DashLayout'
+import Layout from './components/Layout.jsx'
+import Public from './components/Public.jsx'
+import Login from './features/auth/Login.jsx'
+import DashLayout from './components/DashLayout.jsx'
+import Welcome from './features/auth/Welcome.jsx'
+import NotesList from './features/notes/NotesList.jsx'
+import UsersList from './features/users/UsersList.jsx'
+
 function App() {
   return (
     <Routes>  
@@ -13,12 +16,12 @@ function App() {
         <Route path='login' element={<Login />} />
         <Route path='dash' element={<DashLayout />} >
           <Route index element={<Welcome />} />
-         <Route path='notes'>
-          <Route index element={<NotesList />} />
-         </Route>
+          <Route path='notes'>
+            <Route index element={<NotesList />} />
+          </Route>
           <Route path='users'>
-          <Route index element={<UsersList />} />
-         </Route>
+            <Route index element={<UsersList />} />
+          </Route>
         </Route>
       </Route>
     </Routes>
