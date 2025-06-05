@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import {Routes,Route} from 'react-router-dom'
 import './App.css'
-import Layout from './components/layout'
+import Layout from './components/Layout'
+import Login from './components/Login'
+import Public from './components/Public'
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<Layout />} />
+      <Route path='/' element={<Layout />} >
+        <Route index element={<Public />} />
+        <Route path='login' element={<Login />} />
+      </Route>
     </Routes>
   )
 }
